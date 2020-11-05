@@ -1,7 +1,7 @@
 function initGame(sec){
 
   //Genera e visualizza  5 numeri casuali
-  var newArray = (arrayGenerator(5,10))
+  var newArray = (arrayGenerator(5,100))
 
   console.log(newArray)
   newArray.forEach(function(element){
@@ -17,13 +17,24 @@ function initGame(sec){
 
   //Nasconde il Count-Down
   setTimeout(hiderBCounter, time);
+
+  return newArray
 }
 
-initGame(5)
+var gameArray = initGame(5)
 
+//Genera la plancia di gioco
 dashBoardGenerator(100, ".dashboard" )
 
 
+function play(inputNum){
+
+  inputNum= parseInt(inputNum)
+
+  console.log(inputNum)
+
+  console.log(isNumberInArray(inputNum, gameArray))
+}
 
 
 //setInterval(,1000)
