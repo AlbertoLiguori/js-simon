@@ -4,7 +4,7 @@ function randomBetween(min, max){
   return random;
 }
 
-//Funzione comparazione
+//Funzione comparazione di un numero in un Array
 function isNumberInArray(num,numArray){
   for(var i=0; i < numArray.length;i++){
     if (num===numArray[i]){
@@ -13,7 +13,7 @@ function isNumberInArray(num,numArray){
   }
 }
 
-//Generatore di "elements" numeri casuali in un determinato range
+//Genera un array i cui elementi sono numeri casuali in un determinato range
 function arrayGenerator(elements, range){
   var numArray=[]
     while (numArray.length < elements){
@@ -27,10 +27,10 @@ function arrayGenerator(elements, range){
 
 //Nasconde i numeri generati casualmente
 function hiderNums(){
-  $(".given-num-list").toggle()
+  $(".given-num-list").slideToggle(400)
 }
 
-//Fa partire un countDown e lo stampa in un determinato elementohtml
+//Fa partire un countDown e lo stampa in un determinato elemento html
 function backCounter(sec,htmlEl){
   var timeToGo = sec;
   $(htmlEl).text(timeToGo)
@@ -42,28 +42,25 @@ function backCounter(sec,htmlEl){
   }
 
   var counter = setInterval(countDown,1000)
-
   setTimeout(function(){clearInterval(counter)},(sec*1000+1000))
+
 }
 
 //Nasconde il countDown
 function hiderBCounter(){
-  $(".count-down").toggle()
+  $(".count-down").slideToggle(400)
 }
 
-//Generatore di un Array di numeri ordinati
-
+//Genera un Array di "num" numeri ordinati
 function ordinateArray(num){
   var anArray=[]
   for(i=1; i<=num; i++){
     anArray.push(i)
   }
   return(anArray)
-
 }
 
-
-//Genera bottoni
+//Genera bottoni da un array e li "appende" ad un elemento html
 function htmlElGen(anArray , htmlEl){
   // htmlEl.innerHTML=""
   for (i=0; i< anArray.length; i++){
@@ -71,18 +68,15 @@ function htmlElGen(anArray , htmlEl){
   }
 }
 
-
-//genera la Dashboard
+//Genera la Dashboard di "num" pulsanti e li appende ad un elemento html
 function dashBoardGenerator(num, htmlEl){
 
   var anArray = ordinateArray(num)
-
   htmlElGen(anArray, htmlEl)
 
 }
 
-
-//compara gli elementi di due array e resituisce gli elementi in comune
+//Compara gli elementi di due array e resituisce gli elementi in comune
 
 function arrayComparator(anArray1,anArray2){
 
@@ -96,7 +90,5 @@ function arrayComparator(anArray1,anArray2){
       badNumsArray.push(element)
     }
   })
-  console.log(goodNumsArray)
-  console.log(badNumsArray)
-  return goodNumsArray, badNumsArray
+  return[[goodNumsArray],[badNumsArray]]
 }

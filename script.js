@@ -29,7 +29,6 @@ var yourNumArray=[]
 //Genera la plancia di gioco
 dashBoardGenerator(100, ".dashboard" )
 
-
 //Azione gioca
 function play(inputNum){
 
@@ -37,82 +36,18 @@ function play(inputNum){
 
   if(yourNumArray.length== 5){
 
-    console.log(yourNumArray)
-    arrayComparator(yourNumArray , gameArray)
+    var result = arrayComparator(yourNumArray , gameArray)
+    console.log(result[0])
+    console.log(result[1])
+
+    $(".good-result").append("I numeri che hai azzeccato sono:"+ result[0])
+    $(".bad-result").append("Purtroppo i numeri che hai sbagliato sono:"+ result[1])
   }
 
-  console.log(inputNum)
+  else{
 
   yourNumArray.push(inputNum)
-  // console.log(yourNumArray)
 
-  console.log(isNumberInArray(inputNum, gameArray))
+  }
 
 }
-
-
-
-
-// function isNumberInArray(num,numArray){
-//   for(var i=0; i < numArray.length;i++){
-//     if (num===numArray[i]){
-//       return true
-//     }
-//   }
-// }
-
-
-
-//setInterval(,1000)
-
-// var timeInSeconds = 3
-//
-// $(".count-down").text(timeInSeconds)
-//
-// var interval =setInterval(function(){
-//   timeInSeconds --;
-//   $(".count-down").text(timeInSeconds),1000;
-// })
-
-// setTimeout(function(){
-//   clearInterval(interval)
-// },3000)
-
-//ogni secondo deve decrementare e stampare di uno
-
-
-// while (timeToGo>=0){
-// setInterval(function(){
-//   timeToGo--;
-//   $(".count-down").text(timeToGo)
-// },1000)
-
-// function hello(){
-//   console.log("hello")
-// }
-//
-// setInterval(hello,1000)
-
-
-
-//setTimeout(myfunction,2000
-
-// function hello(){
-//   console.log("hello")
-// }
-
-//ritarda l'esecusione della funzione in ARG del tempo indicato
-//setTimeout(hello,2000)
-
-//setInterval
-//esegue la funzione all'infinito ogni tot tempo
-//setInterval(hello,-1000)
-//
-// function randomOnConsole(){
-// console.log(Math.random())
-// }
-//
-// setInterval(randomOnConsole,1000)
-
-// va ad interrompere
-// clearInterval()
