@@ -23,18 +23,44 @@ function initGame(sec){
 
 var gameArray = initGame(5)
 
+//Array dove verranno memorizzati i numeri giocati
+var yourNumArray=[]
+
 //Genera la plancia di gioco
 dashBoardGenerator(100, ".dashboard" )
 
 
+//Azione gioca
 function play(inputNum){
 
   inputNum= parseInt(inputNum)
 
+  if(yourNumArray.length== 5){
+
+    console.log(yourNumArray)
+    arrayComparator(yourNumArray , gameArray)
+  }
+
   console.log(inputNum)
 
+  yourNumArray.push(inputNum)
+  // console.log(yourNumArray)
+
   console.log(isNumberInArray(inputNum, gameArray))
+
 }
+
+
+
+
+// function isNumberInArray(num,numArray){
+//   for(var i=0; i < numArray.length;i++){
+//     if (num===numArray[i]){
+//       return true
+//     }
+//   }
+// }
+
 
 
 //setInterval(,1000)

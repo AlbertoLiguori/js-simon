@@ -80,3 +80,23 @@ function dashBoardGenerator(num, htmlEl){
   htmlElGen(anArray, htmlEl)
 
 }
+
+
+//compara gli elementi di due array e resituisce gli elementi in comune
+
+function arrayComparator(anArray1,anArray2){
+
+  var goodNumsArray=[]
+  var badNumsArray=[]
+
+  anArray1.forEach(function (element){
+    if (isNumberInArray(element, anArray2)){
+      goodNumsArray.push(element)
+    }else{
+      badNumsArray.push(element)
+    }
+  })
+  console.log(goodNumsArray)
+  console.log(badNumsArray)
+  return goodNumsArray, badNumsArray
+}
