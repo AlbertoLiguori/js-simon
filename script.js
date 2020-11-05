@@ -7,7 +7,10 @@ newArray.forEach(function(element){
 })
 
 //Nasconde i numeri visualizzati
-setTimeout(hider, 3000);
+setTimeout(hider, 4000);
+
+//Avvia il conto alla rovescia
+backCounter(3,".count-down")
 
 
 
@@ -15,6 +18,35 @@ setTimeout(hider, 3000);
 
 
 
+//setInterval(,1000)
+
+// var timeInSeconds = 3
+//
+// $(".count-down").text(timeInSeconds)
+//
+// var interval =setInterval(function(){
+//   timeInSeconds --;
+//   $(".count-down").text(timeInSeconds),1000;
+// })
+
+// setTimeout(function(){
+//   clearInterval(interval)
+// },3000)
+
+//ogni secondo deve decrementare e stampare di uno
+
+
+// while (timeToGo>=0){
+// setInterval(function(){
+//   timeToGo--;
+//   $(".count-down").text(timeToGo)
+// },1000)
+
+// function hello(){
+//   console.log("hello")
+// }
+//
+// setInterval(hello,1000)
 
 
 

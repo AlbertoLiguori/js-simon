@@ -25,13 +25,24 @@ function arrayGenerator(elements, range){
   return numArray
 }
 
-// Nasconde un elemento html
-
-// function hider(htmlEl){
-//   $(htmlEl).hide()
-//}
-
 //nasconde i numeri generati casualmente
 function hider(){
   $(".given-num-list").toggle()
+}
+
+//Fa partire un countDown e lo stampa in un determinato elementohtml
+function backCounter(sec,htmlEl){
+  var timeToGo = sec;
+  $(htmlEl).text(timeToGo)
+  
+  function countDown(){
+    timeToGo--
+    $(htmlEl).text(timeToGo)
+    console.log(timeToGo)
+  }
+
+  var counter = setInterval(countDown,1000)
+
+  setTimeout(function(){clearInterval(counter)},(sec*1000+1000))
+
 }
