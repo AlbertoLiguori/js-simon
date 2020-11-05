@@ -50,3 +50,33 @@ function backCounter(sec,htmlEl){
 function hiderBCounter(){
   $(".count-down").toggle()
 }
+
+//Generatore di un Array di numeri ordinati
+
+function ordinateArray(num){
+  var anArray=[]
+  for(i=1; i<=num; i++){
+    anArray.push(i)
+  }
+  return(anArray)
+
+}
+
+
+//Genera bottoni
+function htmlElGen(anArray , htmlEl){
+  // htmlEl.innerHTML=""
+  for (i=0; i< anArray.length; i++){
+    $(htmlEl).append(`<li> <button onclick="play(this.value)" id="`  +i+ `" value="` + (i+1) + `">` + anArray[i] + `</button> </li>`)
+  }
+}
+
+
+//genera la Dashboard
+function dashBoardGenerator(num, htmlEl){
+
+  var anArray = ordinateArray(num)
+
+  htmlElGen(anArray, htmlEl)
+
+}

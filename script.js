@@ -21,6 +21,9 @@ function initGame(sec){
 
 initGame(5)
 
+dashBoardGenerator(100, ".dashboard" )
+
+
 
 
 //setInterval(,1000)
