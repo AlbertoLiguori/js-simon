@@ -25,8 +25,8 @@ function arrayGenerator(elements, range){
   return numArray
 }
 
-//nasconde i numeri generati casualmente
-function hider(){
+//Nasconde i numeri generati casualmente
+function hiderNums(){
   $(".given-num-list").toggle()
 }
 
@@ -34,7 +34,7 @@ function hider(){
 function backCounter(sec,htmlEl){
   var timeToGo = sec;
   $(htmlEl).text(timeToGo)
-  
+
   function countDown(){
     timeToGo--
     $(htmlEl).text(timeToGo)
@@ -44,5 +44,9 @@ function backCounter(sec,htmlEl){
   var counter = setInterval(countDown,1000)
 
   setTimeout(function(){clearInterval(counter)},(sec*1000+1000))
+}
 
+//Nasconde il countDown
+function hiderBCounter(){
+  $(".count-down").toggle()
 }

@@ -1,20 +1,25 @@
-//Genera e visualizza  5 numeri casuali
-var newArray = (arrayGenerator(5,10))
+function initGame(sec){
 
-console.log(newArray)
-newArray.forEach(function(element){
-  $(".given-num-list").append("<li>" + element +"</li>")
-})
+  //Genera e visualizza  5 numeri casuali
+  var newArray = (arrayGenerator(5,10))
 
-//Nasconde i numeri visualizzati
-setTimeout(hider, 4000);
+  console.log(newArray)
+  newArray.forEach(function(element){
+    $(".given-num-list").append("<li>" + element +"</li>")
+  })
 
-//Avvia il conto alla rovescia
-backCounter(3,".count-down")
+  var time = sec*1000
+  //Nasconde i numeri visualizzati
+  setTimeout(hiderNums, time);
 
+  //Avvia il conto alla rovescia
+  backCounter(3,".count-down")
 
+  //Nasconde il Count-Down
+  setTimeout(hiderBCounter, time);
+}
 
-
+initGame(5)
 
 
 
